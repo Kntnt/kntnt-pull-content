@@ -1,0 +1,206 @@
+/* CSS that controls the pullbox. */
+
+body {
+  overflow-x: hidden;
+}
+
+div.pull {
+  margin: 0 0 1em 0;
+}
+
+div.pull > div > *:first-child {
+  margin-top: 0;
+}
+
+div.pull > div > *:last-child {
+  margin-bottom: 0;
+}
+
+
+@media only screen and (min-width: 736px) {
+
+  div.pull {
+  }
+
+  div.pull.center {
+    width: 67%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  div.pull.center-wide {
+  }
+
+  div.pull.center-breakout {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-left: calc(50vw - 75%);
+    padding-right: calc(50vw - 75%);    
+  }
+  
+
+  div.pull.left,
+  div.pull.right,
+  div.pull.left-breakout,
+  div.pull.right-breakout,
+  div.pull.left-margin,
+  div.pull.right-margin {
+    min-width: 320px;
+  }
+
+  div.pull.left,
+  div.pull.right {
+    width: 50%;
+  }
+
+  div.pull.left {
+    float: left;
+  }
+
+  div.pull.right {
+    float: right;
+  }
+
+  div.pull.left-breakout,
+  div.pull.right-breakout {
+    width: calc(50vw - 25%);
+  }
+  
+  div.pull.left-breakout {
+    float: left;
+    margin-left: calc(50% - 50vw);
+    padding-left: calc(50vw - 75%);
+  }
+
+  div.pull.right-breakout {
+    float: right;
+    margin-right: calc(50% - 50vw);
+    padding-right: calc(50vw - 75%);
+  }
+
+  div.pull.left-margin,
+  div.pull.right-margin {
+    max-width: 67%;
+    width: calc(50vw - 50%);
+  }
+
+  div.pull.left > div {
+    margin-right: 2em;
+  }
+
+  div.pull.right > div {
+    margin-left: 2em;
+  }
+
+  div.pull.left-margin {
+    float: left;
+    margin-left: calc(50% - 50vw);
+  }
+
+  div.pull.right-margin {
+    float: right;
+    margin-right: calc(50% - 50vw);
+  }
+
+  div.pull.center-breakout > div,
+  div.pull.left-breakout > div,
+  div.pull.left-margin > div,
+  div.pull.right-breakout > div,
+  div.pull.right-margin > div {
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+
+}
+
+
+/* CSS for pulled blockquotes. */
+
+div.pull blockquote {
+  margin: 0 0 0 -15px;
+  padding: 0 0 0 10px;
+  border-left: 5px solid gold;
+  font-style: italic;
+  font-size: 1.2em;
+  line-height: 1.1;
+}
+
+div.pull.center blockquote,
+div.pull.center-wide blockquote,
+div.pull.center-breakout blockquote {
+  text-align: center;
+}
+
+@media only screen and (min-width: 736px) {
+  div.pull.center blockquote,
+  div.pull.center-wide blockquote,
+  div.pull.center-breakout blockquote {
+    font-size: 1.3em;
+    line-height: 1.2;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+ div.pull.center blockquote,
+ div.pull.center-wide blockquote,
+ div.pull.center-breakout blockquote {
+    font-size: 1.3em;
+    line-height: 1.2;
+  }
+}
+
+
+@media only screen and (min-width: 1500px) {
+ div.pull.left blockquote,
+ div.pull.left-breakout blockquote,
+ div.pull.left-margin blockquote,
+ div.pull.right blockquote,
+ div.pull.right-breakout blockquote,
+ div.pull.right-margin blockquote {
+    font-size: 1.3em;
+    line-height: 1.2;
+  }
+
+}
+
+
+/* CSS for pulled images */
+
+div.pull.image img {
+  width: 100%;
+}
+
+div.pull.image img[class*="align"],
+div.pull.image figure.wp-caption[class*="align"] {
+  float: none;
+}
+
+
+/* CSS pulled sidebars. */
+
+div.pull.sidebar > div {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  font-size: 66.67%;
+  padding: 1em;
+}
+
+
+/* Workarounds for the WordPress wpautop-function bug */
+
+div.pull.sidebar > div > p:first-child:empty {
+    display: none;
+}
+
+div.pull.sidebar > div > p:empty + * {
+    margin-top: 0;
+}
+
+div.pull.sidebar > div > p > br:last-child {
+  display: none;
+}
+
+
+div.pull.sidebar > div > figure.wp-caption[class*="align"]:last-of-type {
+  margin-bottom: 0;  
+}
