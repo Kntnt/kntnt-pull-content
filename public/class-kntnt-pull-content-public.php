@@ -28,6 +28,7 @@ class Kntnt_Pull_Content_Public {
     'unstyled',
     'quote',
     'image',
+    'table',
     'sidebar',
   ];
 
@@ -39,7 +40,8 @@ class Kntnt_Pull_Content_Public {
   
   public function pull_content($atts, $content, $tag) {
 
-    // Execude any shortcodes in the body of this shortcode.
+    // Execute any shortcodes in the body of this shortcode.
+    $content = preg_replace('/^\n|\n$/', '', $content);
     $content = do_shortcode($content);
 
     // Import variables to be used in the template.
@@ -51,7 +53,7 @@ class Kntnt_Pull_Content_Public {
       $class = "pull $pos $type" . ($class ? " $class" : '');
       
       ob_start();
-      include_once "partials/{$this->ns}.php";
+      include "partials/{$this->ns}.php";
       $content = ob_get_clean();
 
     }

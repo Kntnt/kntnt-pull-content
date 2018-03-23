@@ -6,7 +6,7 @@
  * @wordpress-plugin
  * Plugin Name:       Kntnt's Pull  Content plugin
  * Plugin URI:        https://www.kntnt.com/
- * Description:       Adds the shortcode [pull pos=… type=… class=… id=…]…[/pull] where `pos` is one of `center`, `center-wide`, `center-breakout`, `left`, `left-breakout`, `left-margin`, `right`, `right-breakout`, and`right-margin`; `type` is one of `quote`, `img`, `sidebar`, `unstyled` (default); `class` is optionally CSS class(es); and `id` is optionally CSS id for the wrapping &lt;div&gt;-element. The shortcode also supports positional arguments, thus [pull left] is equvivalent to [pull pos=left]. Any content can be used between [pull] and [/pull], e.g. &lt;blockquote&gt; for pullquotes and &lt;img&gt; for images. You probably need to add some CSS yourself to make everything look really awesome.
+ * Description:       Adds shortcode to make pull quotes, sidebars and similar content modules.
  * Version:           1.0.0
  * Author:            Thomas Barregren
  * Author URI:        https://www.kntnt.com/
