@@ -4,7 +4,7 @@ WordPress-plugin that add a shortcode to make pull quotes, sidebars and similar 
 
 Adds the shortcode
 
-[pull pos=… type=… class=… id=…]…[/pull]
+`[pull pos=… type=… class=… id=…]…[/pull]`
 
 that pulls the content between `[pull]` and `[/pull]` out of the flow and place it according to the `pos` argument.
 
