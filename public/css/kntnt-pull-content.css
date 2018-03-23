@@ -175,6 +175,10 @@ div.pull.image figure.wp-caption[class*="align"] {
   float: none;
 }
 
+div.pull > div > figure.wp-caption[class*="align"]:last-of-type {
+  margin-bottom: 0;  
+}
+
 
 /* CSS pulled tables. */
 
@@ -195,18 +199,12 @@ div.pull.sidebar > div {
 
 /* Workarounds for the WordPress wpautop bug */
 
-div.pull.sidebar > div > p:empty {
-    display: none;
-}
-
-div.pull.sidebar > div > p:empty + * {
-    margin-top: 0;
-}
-
-div.pull.sidebar > div > p > br:last-child {
+div.pull > div > p:empty,
+div.pull > div > br:last-child,
+div.pull > div > p > br:last-child {
   display: none;
 }
 
-div.pull.sidebar > div > figure.wp-caption[class*="align"]:last-of-type {
-  margin-bottom: 0;  
+div.pull > div > p:empty + * {
+    margin-top: 0;
 }

@@ -41,8 +41,10 @@ class Kntnt_Pull_Content_Public {
   public function pull_content($atts, $content, $tag) {
 
     // Execute any shortcodes in the body of this shortcode.
-    $content = preg_replace('/^\n|\n$/', '', $content);
     $content = do_shortcode($content);
+
+    // Workaround for the WordPress wpautop bug.
+    $content = preg_replace('@^</p>\n|\n<p>$@', '', $content);
 
     // Import variables to be used in the template.
     extract($this->shortcode_atts(self::$defaults, $atts));
