@@ -10,15 +10,16 @@ that pulls the content between `[pull]` and `[/pull]` out of the flow and place 
 
 Following values are supported by the `pos` argument:
 
-* `center` (default)
-* `center-wide`
-* `center-breakout`
-* `left`
-* `left-breakout`
-* `left-margin`
-* `right`
-* `right-breakout`
-* `right-margin`
+* `center` — the bounding box is centered in the column and spans 67% of the column width.
+* `wide` — the bounding box spans 100% of the column width.
+* `breakout` — the bounding box spans from middle of the left margin to the middle of the right margin
+* `banner` — the bounding box spans from screen edge to screen edge
+* `left` — the bounding box is align left in the column and spans 33% of the column width.
+* `left-breakout` — the bounding box is centered around the left limit of the column. 
+* `left-margin` — the bounding box is placed in the left margin
+* `right` — the bounding box is align left in the column and spans 33% of the column width.
+* `right-breakout` — the bounding box is centered around the right limit of the column.
+* `right-margin` — the bounding box is placed in the right margin
 
 How the content is presented depends on the `type` argument. Following values are supported:
 

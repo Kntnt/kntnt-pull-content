@@ -4,7 +4,7 @@
  * Plugin main file.
  *
  * @wordpress-plugin
- * Plugin Name:       Kntnt's Pull  Content plugin
+ * Plugin Name:       Kntnt's Pull Content plugin
  * Plugin URI:        https://www.kntnt.com/
  * Description:       Adds shortcode to make pull quotes, sidebars and similar content modules.
  * Version:           1.0.0
@@ -16,41 +16,113 @@
  * Domain Path:       /languages
  */
  
-defined('WPINC') || die;
+namespace Kntnt\Pull_Content;
 
-// Bootstrap the plugin.
-(new Kntnt_Pull_Content())->run();
+defined( 'WPINC' ) && new Plugin();
 
-// Plugin main class.
-class Kntnt_Pull_Content {
+class Plugin {
 
-  // This plugin's namespace
-  private $ns;
+  private static $defaults = [
+    'pos' => null,
+    'type' => 'unstyled',
+    'class' => null,
+    'id' => null,
+  ];
+      
+  private static $positions = [
+    'center',
+    'wide',
+    'center-wide',     // Synonym of wide
+    'breakout',
+    'center-breakout', // Synonym of breakout
+    'banner',
+    'center-banner',   // Synonym of banner
+    'left',
+    'left-breakout',
+    'left-margin',
+    'right',
+    'right-breakout',
+    'right-margin',
+  ];
 
-  // Construct an object of this class.
+  private static $types = [
+    'unstyled',
+    'quote',
+    'image',
+    'table',
+    'sidebar',
+  ];
+
   public function __construct() {
-    $this->ns = basename(dirname(__FILE__));
-    $this->load_dependencies();
     $this->load_textdomain();
+    add_shortcode( 'pull', [$this, 'pull_content'] );
+    add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_assets' ]) ;
   }
   
-  // Setup public and administrative interfaces.
-  public function run() {
-    $cn = strtr(ucwords($this->ns, '-'), '-', '_');
-    (new ReflectionClass("{$cn}_Public"))->newInstance($this->ns);
+  public function pull_content( $atts, $content, $tag ) {
+
+    // Execute any shortcodes in the body of this shortcode.
+    $content = do_shortcode( $content );
+
+    // Workaround for the WordPress wpautop bug.
+    $content = preg_replace( '@^</p>\n|\n<p>$@', '', $content );
+
+    // Import variables to be used in the template.
+    extract( $this->shortcode_atts( self::$defaults, $atts ) );
+
+    if ( in_array( $pos, self::$positions ) && in_array( $type, self::$types ) ) {
+
+      // Add some classes.
+      $class = "pull $pos $type" . ( $class ? " $class" : '' );
+      
+      // Get the content.
+      ob_start();
+      include "includes/kntnt-pull-content.php";
+      $content = ob_get_clean();
+
+    }
+      
+    return $content;
+
+  }
+  
+  public function enqueue_assets() {
+    wp_enqueue_style( 'kntnt-pull-content.css', plugins_url( '/css/kntnt-pull-content.css', __FILE__ ), [] );
+  }
+  
+  // A more forgiving version of WP's shortcode_atts().
+  private function shortcode_atts( $pairs, $atts, $shortcode = '' ) {
+
+    $atts = (array) $atts;
+    $out = [];
+    $pos = 0;
+    while( $name = key($pairs) ) {
+      $default = array_shift( $pairs );
+      if ( array_key_exists($name, $atts ) ) {
+        $out[$name] = $atts[$name];
+      }
+      elseif ( array_key_exists( $pos, $atts ) ) {
+        $out[$name] = $atts[$pos];
+        ++$pos;
+      }
+      else {
+        $out[$name] = $default;
+      }
+    }
+
+    if ( $shortcode ) {
+      $out = apply_filters( "shortcode_atts_{$shortcode}", $out, $pairs, $atts, $shortcode );
+    }
+    
+    return $out;
+
   }
 
-  // Load public and administrative interfaces.
-  private function load_dependencies() {
-    require_once plugin_dir_path(__FILE__) . "public/class-{$this->ns}-public.php";
-  }
-
-  // Load localization.
   private function load_textdomain() {
     load_plugin_textdomain(
-      $this->ns,
+      'kntnt-pull-content',
       false,
-      "{$this->ns}/languages/"
+      "kntnt-pull-content/languages/"
     );
   }
 
