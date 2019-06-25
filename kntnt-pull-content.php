@@ -6,7 +6,7 @@
  * Plugin Name:       Kntnt's Pull Content plugin
  * Plugin URI:        https://www.kntnt.com/
  * Description:       Adds shortcode to make pull quotes, sidebars and similar content modules.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            Thomas Barregren
  * Author URI:        https://www.kntnt.com/
  * License:           GPL-2.0+
@@ -22,10 +22,12 @@ defined('WPINC') && new Plugin;
 class Plugin {
 
     private static $defaults = [
-        'pos'   => null,
+        'pos'   => 'wide',
         'type'  => 'unstyled',
         'class' => null,
         'id'    => null,
+        'style' => null,
+        'inner_style' => null,
     ];
 
     private static $positions = [
