@@ -5,7 +5,23 @@ body {
 }
 
 div.pull {
-  margin: 0.25em 0 1em 0;
+  margin-top: 0.25em;
+  margin-bottom: 1em;
+}
+
+div.pull.center,
+div.pull.wide,
+div.pull.center-wide {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+div.pull.breakout,
+div.pull.center-breakout,
+div.pull.banner,
+div.pull.center-banner {
+  margin-top: 4em;
+  margin-bottom: 4em;
 }
 
 div.pull > div > *:first-child {
@@ -120,6 +136,7 @@ div.pull > div > *:last-child {
 
 }
 
+
 /* CSS for pulled blockquotes. */
 
 div.pull blockquote {
@@ -174,6 +191,7 @@ div.pull.center-breakout blockquote {
 
 }
 
+
 /* CSS for pulled images */
 
 div.pull.image img {
@@ -189,12 +207,14 @@ div.pull > div > figure.wp-caption[class*="align"]:last-of-type {
   margin-bottom: 0;
 }
 
+
 /* CSS pulled tables. */
 
 div.pull.table > div > table {
   box-shadow: 5px 5px 15px rgba(216, 216, 216, 0.5);
   margin: 0;
 }
+
 
 /* CSS pulled sidebars. */
 
@@ -204,6 +224,7 @@ div.pull.sidebar > div {
   font-size: 66.67%;
   padding: 1em 2em 1.2em 2em;
 }
+
 
 /* Some workarounds for the WordPress wpautop bug (open since 2007!) */
 
