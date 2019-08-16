@@ -221,8 +221,15 @@ div.pull.table > div > table {
 div.pull.sidebar > div {
   background-color: #F4E399;
   box-shadow: 5px 5px 15px rgba(216, 216, 216, 0.5);
-  font-size: 66.67%;
   padding: 1em 2em 1.2em 2em;
+}
+
+div.pull.left-breakout.sidebar > div,
+div.pull.left-margin.sidebar > div,
+div.pull.right.sidebar > div,
+div.pull.right-breakout.sidebar > div,
+div.pull.right-margin.sidebar > div {
+  font-size: 62.5%;
 }
 
 
