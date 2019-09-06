@@ -66,7 +66,7 @@ class Plugin {
         $content = do_shortcode($content);
 
         // Workaround for the WordPress wpautop bug.
-        $content = preg_replace('@^</p>\n|\n<p>$@', '', $content);
+        $content = preg_replace('@^\s*</p>|<p>\s*$@|<p>[\s]*?<\/p>/', '', $content);
 
         // Import variables to be used in the template.
         extract($this->shortcode_atts(self::$defaults, $atts));
