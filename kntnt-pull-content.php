@@ -6,7 +6,7 @@
  * Plugin Name:       Kntnt's Pull Content plugin
  * Plugin URI:        https://www.kntnt.com/
  * Description:       Adds shortcode to make pull quotes, sidebars and similar content modules.
- * Version:           1.1.0
+ * Version:           1.1.1
  * Author:            Thomas Barregren
  * Author URI:        https://www.kntnt.com/
  * License:           GPL-2.0+
@@ -66,7 +66,7 @@ class Plugin {
         $content = do_shortcode($content);
 
         // Workaround for the WordPress wpautop bug.
-        $content = preg_replace('@^\s*</p>|<p>\s*$@|<p>[\s]*?<\/p>/', '', $content);
+        $content = preg_replace('`^\s*</p>|<p>\s*$|<p>[\s]*?</p>`', '', $content);
 
         // Import variables to be used in the template.
         extract($this->shortcode_atts(self::$defaults, $atts));
