@@ -203,7 +203,12 @@ div.pull.image img {
 div.pull.image img[class*="align"],
 div.pull.image figure.wp-caption[class*="align"] {
     float: none;
-    margin: 0;
+}
+
+div.pull.image:not(.banner) img[class*="align"],
+div.pull.image:not(.banner) figure.wp-caption[class*="align"] {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 div.pull > div > figure.wp-caption[class*="align"]:last-of-type {
