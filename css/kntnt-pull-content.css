@@ -1,138 +1,140 @@
 /* CSS that controls the pullbox. */
 
 body {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 div.pull {
-  margin-top: 0.25em;
-  margin-bottom: 1em;
+    margin-top: 0.3125rem;
+    margin-bottom: 1.25rem;
+    /* margin-top: 0.25em;
+    margin-bottom: 1em; */
 }
 
 div.pull.center,
 div.pull.wide,
 div.pull.center-wide {
-  margin-top: 2em;
-  margin-bottom: 2em;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
 }
 
 div.pull.breakout,
 div.pull.center-breakout,
 div.pull.banner,
 div.pull.center-banner {
-  margin-top: 4em;
-  margin-bottom: 4em;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
 }
 
 div.pull > div > *:first-child {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 div.pull > div > *:last-child {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 @media only screen and (min-width: 736px) {
 
-  div.pull.center {
-    width: 67%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+    div.pull.center {
+        width: 67%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-  div.pull.wide,
-  div.pull.center-wide {
-  }
+    div.pull.wide,
+    div.pull.center-wide {
+    }
 
-  div.pull.breakout,
-  div.pull.center-breakout {
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    padding-left: calc(50vw - 75%);
-    padding-right: calc(50vw - 75%);
-  }
+    div.pull.breakout,
+    div.pull.center-breakout {
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        padding-left: calc(50vw - 75%);
+        padding-right: calc(50vw - 75%);
+    }
 
-  div.pull.banner:not(.image),
-  div.pull.center-banner:not(.image),
-  div.pull.banner.image img,
-  div.pull.center-banner.image img {
-    max-width: 100vw !important;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-  }
+    div.pull.banner:not(.image),
+    div.pull.center-banner:not(.image),
+    div.pull.banner.image img,
+    div.pull.center-banner.image img {
+        max-width: 100vw !important;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+    }
 
-  div.pull.left,
-  div.pull.right,
-  div.pull.left-breakout,
-  div.pull.right-breakout,
-  div.pull.left-margin,
-  div.pull.right-margin {
-    min-width: 320px;
-  }
+    div.pull.left,
+    div.pull.right,
+    div.pull.left-breakout,
+    div.pull.right-breakout,
+    div.pull.left-margin,
+    div.pull.right-margin {
+        min-width: 320px;
+    }
 
-  div.pull.left,
-  div.pull.right {
-    width: 50%;
-  }
+    div.pull.left,
+    div.pull.right {
+        width: 50%;
+    }
 
-  div.pull.left {
-    float: left;
-  }
+    div.pull.left {
+        float: left;
+    }
 
-  div.pull.right {
-    float: right;
-  }
+    div.pull.right {
+        float: right;
+    }
 
-  div.pull.left-breakout,
-  div.pull.right-breakout {
-    width: calc(50vw - 25%);
-  }
+    div.pull.left-breakout,
+    div.pull.right-breakout {
+        width: calc(50vw - 25%);
+    }
 
-  div.pull.left-breakout {
-    float: left;
-    margin-left: calc(50% - 50vw);
-    padding-left: calc(50vw - 75%);
-  }
+    div.pull.left-breakout {
+        float: left;
+        margin-left: calc(50% - 50vw);
+        padding-left: calc(50vw - 75%);
+    }
 
-  div.pull.right-breakout {
-    float: right;
-    margin-right: calc(50% - 50vw);
-    padding-right: calc(50vw - 75%);
-  }
+    div.pull.right-breakout {
+        float: right;
+        margin-right: calc(50% - 50vw);
+        padding-right: calc(50vw - 75%);
+    }
 
-  div.pull.left-margin,
-  div.pull.right-margin {
-    max-width: 50%;
-    width: calc(50vw - 50%);
-  }
+    div.pull.left-margin,
+    div.pull.right-margin {
+        max-width: 50%;
+        width: calc(50vw - 50%);
+    }
 
-  div.pull.left > div {
-    margin-right: 2em;
-  }
+    div.pull.left > div {
+        margin-right: 2.5rem;
+    }
 
-  div.pull.right > div {
-    margin-left: 2em;
-  }
+    div.pull.right > div {
+        margin-left: 2.5rem;
+    }
 
-  div.pull.left-margin {
-    float: left;
-    margin-left: calc(50% - 50vw);
-  }
+    div.pull.left-margin {
+        float: left;
+        margin-left: calc(50% - 50vw);
+    }
 
-  div.pull.right-margin {
-    float: right;
-    margin-right: calc(50% - 50vw);
-  }
+    div.pull.right-margin {
+        float: right;
+        margin-right: calc(50% - 50vw);
+    }
 
-  div.pull.breakout > div,
-  div.pull.center-breakout > div,
-  div.pull.left-breakout > div,
-  div.pull.left-margin > div,
-  div.pull.right-breakout > div,
-  div.pull.right-margin > div {
-    margin-left: 2em;
-    margin-right: 2em;
-  }
+    div.pull.breakout > div,
+    div.pull.center-breakout > div,
+    div.pull.left-breakout > div,
+    div.pull.left-margin > div,
+    div.pull.right-breakout > div,
+    div.pull.right-margin > div {
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+    }
 
 }
 
@@ -140,12 +142,12 @@ div.pull > div > *:last-child {
 /* CSS for pulled blockquotes. */
 
 div.pull blockquote {
-  margin: 0 0 0 -15px;
-  padding: 0 0 0 10px;
-  border-left: 5px solid #E5C800;
-  font-style: italic;
-  font-size: 1.2em;
-  line-height: 1.1;
+    margin: 0 0 0 -15px;
+    padding: 0 0 0 10px;
+    border-left: 5px solid #E5C800;
+    font-style: italic;
+    font-size: 1.2em;
+    line-height: 1.1;
 }
 
 div.pull.center blockquote,
@@ -153,41 +155,41 @@ div.pull.wide blockquote,
 div.pull.center-wide blockquote,
 div.pull.breakout blockquote,
 div.pull.center-breakout blockquote {
-  text-align: center;
+    text-align: center;
 }
 
 @media only screen and (min-width: 736px) {
-  div.pull.center blockquote,
-  div.pull.wide blockquote,
-  div.pull.center-wide blockquote,
-  div.pull.breakout blockquote,
-  div.pull.center-breakout blockquote {
-    font-size: 1.3em;
-    line-height: 1.2;
-  }
+    div.pull.center blockquote,
+    div.pull.wide blockquote,
+    div.pull.center-wide blockquote,
+    div.pull.breakout blockquote,
+    div.pull.center-breakout blockquote {
+        font-size: 1.3em;
+        line-height: 1.2;
+    }
 }
 
 @media only screen and (min-width: 1100px) {
-  div.pull.center blockquote,
-  div.pull.wide blockquote,
-  div.pull.center-wide blockquote,
-  div.pull.breakout blockquote,
-  div.pull.center-breakout blockquote {
-    font-size: 1.3em;
-    line-height: 1.2;
-  }
+    div.pull.center blockquote,
+    div.pull.wide blockquote,
+    div.pull.center-wide blockquote,
+    div.pull.breakout blockquote,
+    div.pull.center-breakout blockquote {
+        font-size: 1.3em;
+        line-height: 1.2;
+    }
 }
 
 @media only screen and (min-width: 1500px) {
-  div.pull.left blockquote,
-  div.pull.left-breakout blockquote,
-  div.pull.left-margin blockquote,
-  div.pull.right blockquote,
-  div.pull.right-breakout blockquote,
-  div.pull.right-margin blockquote {
-    font-size: 1.3em;
-    line-height: 1.2;
-  }
+    div.pull.left blockquote,
+    div.pull.left-breakout blockquote,
+    div.pull.left-margin blockquote,
+    div.pull.right blockquote,
+    div.pull.right-breakout blockquote,
+    div.pull.right-margin blockquote {
+        font-size: 1.3em;
+        line-height: 1.2;
+    }
 
 }
 
@@ -195,33 +197,34 @@ div.pull.center-breakout blockquote {
 /* CSS for pulled images */
 
 div.pull.image img {
-  width: 100%;
+    width: 100%;
 }
 
 div.pull.image img[class*="align"],
 div.pull.image figure.wp-caption[class*="align"] {
-  float: none;
+    float: none;
+    margin: 0;
 }
 
 div.pull > div > figure.wp-caption[class*="align"]:last-of-type {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 
 /* CSS pulled tables. */
 
 div.pull.table > div > table {
-  box-shadow: 5px 5px 15px rgba(216, 216, 216, 0.5);
-  margin: 0;
+    box-shadow: 5px 5px 15px rgba(216, 216, 216, 0.5);
+    margin: 0;
 }
 
 
 /* CSS pulled sidebars. */
 
 div.pull.sidebar > div {
-  background-color: #F4E399;
-  box-shadow: 5px 5px 15px rgba(216, 216, 216, 0.5);
-  padding: 1em 2em 1.2em 2em;
+    background-color: #F4E399;
+    box-shadow: 5px 5px 15px rgba(216, 216, 216, 0.5);
+    padding: 1em 1.25em 1.25em 1.25em;
 }
 
 div.pull.left-breakout.sidebar > div,
@@ -229,18 +232,19 @@ div.pull.left-margin.sidebar > div,
 div.pull.right.sidebar > div,
 div.pull.right-breakout.sidebar > div,
 div.pull.right-margin.sidebar > div {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 
 /* Some workarounds for the WordPress wpautop bug (open since 2007!) */
 
 div.pull > div > p:empty,
+div.pull > div > br:first-child,
 div.pull > div > br:last-child,
 div.pull > div > p > br:last-child {
-  display: none;
+    display: none;
 }
 
 div.pull > div > p:empty + * {
-  margin-top: 0;
+    margin-top: 0;
 }
