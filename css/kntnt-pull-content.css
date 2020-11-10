@@ -7,8 +7,6 @@ body {
 div.pull {
     margin-top: 0.3125rem;
     margin-bottom: 1.25rem;
-    /* margin-top: 0.25em;
-    margin-bottom: 1em; */
 }
 
 div.pull.center,
@@ -196,8 +194,9 @@ div.pull.center-breakout blockquote {
 
 /* CSS for pulled images */
 
+div.pull.image figure,
 div.pull.image img {
-    width: 100%;
+    width: 100% !important;
 }
 
 div.pull.image img[class*="align"],
