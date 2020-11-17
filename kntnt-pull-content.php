@@ -7,7 +7,7 @@
  * Plugin URI:        https://www.kntnt.com/
  * GitHub Plugin URI: https://github.com/Kntnt/kntnt-pull-content
  * Description:       Adds shortcode to make pull quotes, sidebars and similar content modules.
- * Version:           1.1.5
+ * Version:           1.1.6
  * Author:            Thomas Barregren
  * Author URI:        https://www.kntnt.com/
  * License:           GPL-2.0+
