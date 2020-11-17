@@ -56,9 +56,10 @@ div.pull > div > *:last-child {
     div.pull.center-banner:not(.image),
     div.pull.banner.image img,
     div.pull.center-banner.image img {
-        max-width: 100vw !important;
+        max-width: 100vw /* !important */;
         width: 100vw;
         margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
     }
 
     div.pull.left,
@@ -196,7 +197,7 @@ div.pull.center-breakout blockquote {
 
 div.pull.image figure,
 div.pull.image img {
-    width: 100% !important;
+    width: 100% /* !important */;
 }
 
 div.pull.image img[class*="align"],
